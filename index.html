@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- =============================================
+       SEO META TAGS
+  ============================================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Directorio de IA para Estudiantes | Mejora tus Notas con Inteligencia Artificial</title>
+    <meta name="description"
+        content="Descubre las mejores herramientas de Inteligencia Artificial gratuitas y freemium para estudiantes universitarios y de instituto. Mejora tus notas, resume apuntes y prepara exámenes con IA." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="IA_Estudiantes" />
+    <link rel="canonical" href="https://jordifrances.github.io/IA_Estudiantes/" />
+
+    <!-- Open Graph (redes sociales) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jordifrances.github.io/IA_Estudiantes/" />
+    <meta property="og:title" content="Directorio de IA para Estudiantes | Mejora tus Notas" />
+    <meta property="og:description"
+        content="Las mejores herramientas de IA gratuitas y freemium para estudiantes. Resúmenes, trabajos, exámenes y más." />
+    <meta property="og:image" content="https://jordifrances.github.io/IA_Estudiantes/og-image.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Directorio de IA para Estudiantes | Mejora tus Notas" />
+    <meta name="twitter:description" content="Las mejores herramientas de IA gratuitas y freemium para estudiantes." />
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom styles & animations -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- =============================================
+       SCHEMA.ORG — ItemList / Directorio de herramientas
+  ============================================== -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Directorio de Herramientas de IA para Estudiantes",
+    "description": "Lista curada de las mejores herramientas de Inteligencia Artificial gratuitas y freemium para estudiantes universitarios y de instituto.",
+    "url": "https://jordifrances.github.io/IA_Estudiantes/",
+    "numberOfItems": 3,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "ChatGPT",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "url": "https://chat.openai.com",
+          "description": "Asistente de IA conversacional para redactar trabajos, resolver dudas y estudiar cualquier materia."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Claude 3.5",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "url": "https://claude.ai",
+          "description": "IA de Anthropic ideal para analizar documentos largos, resumir PDFs y argumentar con rigor académico."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Perplexity AI",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "url": "https://www.perplexity.ai",
+          "description": "Motor de búsqueda con IA que cita fuentes reales, perfecto para investigaciones académicas."
+        }
+      }
+    ]
+  }
+  </script>
+
+    <!-- WebSite schema (SitelinksSearchbox) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "IA_Estudiantes",
+    "url": "https://jordifrances.github.io/IA_Estudiantes/"
+  }
+  </script>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+    <!-- =============================================
+       HEADER / NAVEGACIÓN
+  ============================================== -->
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800" role="banner">
+        <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between" aria-label="Navegación principal">
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2 group" aria-label="IA_Estudiantes - Inicio">
+                <span class="text-2xl" aria-hidden="true">🎓</span>
+                <span class="text-xl font-bold tracking-tight">
+                    <span class="text-white">IA</span><span class="text-brand-500">_Estudiantes</span>
+                </span>
+            </a>
+
+            <!-- Nav links -->
+            <ul class="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-300" role="list">
+                <li><a href="#directorio" class="hover:text-white transition-colors">Directorio</a></li>
+                <li><a href="#como-usar" class="hover:text-white transition-colors">¿Cómo usar la IA?</a></li>
+                <li>
+                    <a href="#directorio"
+                        class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg transition-colors"
+                        aria-label="Ver todas las herramientas de IA">
+                        Ver herramientas
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn"
+                class="sm:hidden p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800 transition"
+                aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-slate-900 border-t border-slate-800 px-4 pb-4" role="menu">
+            <ul class="flex flex-col gap-3 pt-4 text-sm font-medium text-slate-300">
+                <li><a href="#directorio" class="hover:text-white transition-colors" role="menuitem">Directorio</a></li>
+                <li><a href="#como-usar" class="hover:text-white transition-colors" role="menuitem">¿Cómo usar la
+                        IA?</a></li>
+                <li>
+                    <a href="#directorio"
+                        class="block bg-brand-600 hover:bg-brand-700 text-white text-center px-4 py-2 rounded-lg transition-colors"
+                        role="menuitem">
+                        Ver herramientas
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ===========================================================
+       AD SLOT 1 — BAJO EL HEADER
+       Pega aquí tu código de Google AdSense
+  ============================================================ -->
+    <!-- ADSENSE: AD_SLOT_HEADER_BELOW -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+
+
+    <main id="main-content">
+
+        <!-- =============================================
+         HERO SECTION
+    ============================================== -->
+        <section class="relative overflow-hidden py-20 sm:py-32 px-4" aria-labelledby="hero-title">
+            <!-- Background gradient glow -->
+            <div class="absolute inset-0 -z-10 pointer-events-none" aria-hidden="true">
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-brand-600/20 blur-3xl">
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Badge -->
+                <span
+                    class="inline-flex items-center gap-2 bg-brand-900/60 border border-brand-700/50 text-brand-300 text-xs font-semibold px-3 py-1 rounded-full mb-6 animate-fade-in">
+                    <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse" aria-hidden="true"></span>
+                    Directorio actualizado 2025
+                </span>
+
+                <h1 id="hero-title"
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 animate-slide-up">
+                    Las Mejores
+                    <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">
+                        Inteligencias Artificiales</span>
+                    <br />para Estudiantes
+                </h1>
+
+                <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 animate-slide-up"
+                    style="animation-delay: 0.1s">
+                    Directorio curado de herramientas de IA <strong class="text-slate-200">gratuitas y freemium</strong>
+                    para universitarios y estudiantes de instituto.
+                    Mejora tus notas, organiza tus estudios y ahorra horas de trabajo.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up"
+                    style="animation-delay: 0.2s">
+                    <a href="#directorio"
+                        class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-brand-600/30"
+                        aria-label="Explorar el directorio completo de herramientas de IA">
+                        🔍 Explorar el directorio
+                    </a>
+                    <a href="privacy-policy.html"
+                        class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-8 py-3 rounded-xl transition-all border border-slate-700 hover:border-slate-600">
+                        Política de privacidad
+                    </a>
+                </div>
+
+                <!-- Stats bar -->
+                <div class="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto text-center animate-slide-up"
+                    style="animation-delay: 0.3s">
+                    <div>
+                        <p class="text-2xl font-bold text-white">+20</p>
+                        <p class="text-xs text-slate-500">Herramientas</p>
+                    </div>
+                    <div class="border-x border-slate-700">
+                        <p class="text-2xl font-bold text-white">100%</p>
+                        <p class="text-xs text-slate-500">Verificadas</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-white">Gratis</p>
+                        <p class="text-xs text-slate-500">Para empezar</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+         SECCIÓN CÓMO USAR
+    ============================================== -->
+        <section id="como-usar" class="py-16 px-4 border-t border-slate-800/60" aria-labelledby="como-usar-title">
+            <div class="max-w-6xl mx-auto">
+                <h2 id="como-usar-title" class="text-2xl sm:text-3xl font-bold text-center mb-12">
+                    ¿Cómo puede la IA <span class="text-brand-400">ayudarte a estudiar?</span>
+                </h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Use case cards -->
+                    <article
+                        class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-700/50 transition-colors text-center">
+                        <div class="text-3xl mb-3" aria-hidden="true">📝</div>
+                        <h3 class="font-semibold text-white mb-2">Resumen de apuntes</h3>
+                        <p class="text-sm text-slate-400">Pega tus apuntes y obtén un resumen claro y estructurado en
+                            segundos.</p>
+                    </article>
+                    <article
+                        class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-700/50 transition-colors text-center">
+                        <div class="text-3xl mb-3" aria-hidden="true">🔍</div>
+                        <h3 class="font-semibold text-white mb-2">Investigación rápida</h3>
+                        <p class="text-sm text-slate-400">Busca información con fuentes verificadas para tus trabajos
+                            académicos.</p>
+                    </article>
+                    <article
+                        class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-700/50 transition-colors text-center">
+                        <div class="text-3xl mb-3" aria-hidden="true">✍️</div>
+                        <h3 class="font-semibold text-white mb-2">Redacción y estilo</h3>
+                        <p class="text-sm text-slate-400">Mejora la redacción de tus trabajos y adapta el tono académico
+                            correcto.</p>
+                    </article>
+                    <article
+                        class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-700/50 transition-colors text-center">
+                        <div class="text-3xl mb-3" aria-hidden="true">🎯</div>
+                        <h3 class="font-semibold text-white mb-2">Preparar exámenes</h3>
+                        <p class="text-sm text-slate-400">Genera preguntas de práctica y fichas de estudio
+                            personalizadas.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+         DIRECTORIO DE HERRAMIENTAS (TARJETAS)
+    ============================================== -->
+        <section id="directorio" class="py-16 px-4 border-t border-slate-800/60" aria-labelledby="directorio-title">
+            <div class="max-w-6xl mx-auto">
+
+                <!-- Section header -->
+                <div class="text-center mb-12">
+                    <h2 id="directorio-title" class="text-2xl sm:text-3xl font-bold mb-3">
+                        Directorio de Herramientas de IA
+                    </h2>
+                    <p class="text-slate-400 max-w-xl mx-auto">Seleccionadas y verificadas por estudiantes. Todas tienen
+                        plan gratuito para empezar.</p>
+                </div>
+
+                <!-- Filter pills -->
+                <div class="flex flex-wrap gap-2 justify-center mb-10" role="group" aria-label="Filtrar por categoría">
+                    <button
+                        class="filter-btn active bg-brand-600 text-white text-sm font-medium px-4 py-2 rounded-full transition-all"
+                        data-filter="all" aria-pressed="true">Todas</button>
+                    <button
+                        class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium px-4 py-2 rounded-full transition-all"
+                        data-filter="escritura" aria-pressed="false">✍️ Escritura</button>
+                    <button
+                        class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium px-4 py-2 rounded-full transition-all"
+                        data-filter="busqueda" aria-pressed="false">🔍 Búsqueda</button>
+                    <button
+                        class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium px-4 py-2 rounded-full transition-all"
+                        data-filter="resumen" aria-pressed="false">📝 Resumen</button>
+                </div>
+
+                <!-- ============================================================
+             CARDS GRID
+        ============================================================ -->
+                <div id="tools-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
+
+                    <!-- ——— TARJETA 1: ChatGPT ——— -->
+                    <article class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col gap-4
+                          hover:border-brand-600/50 hover:shadow-xl hover:shadow-brand-900/30 hover:-translate-y-1
+                          transition-all duration-300 card-animate" data-category="escritura resumen" role="listitem"
+                        aria-label="Herramienta: ChatGPT">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-2xl flex-shrink-0"
+                                    aria-hidden="true">🤖</div>
+                                <div>
+                                    <h3 class="font-bold text-white text-lg leading-tight">ChatGPT</h3>
+                                    <p class="text-xs text-slate-500">OpenAI</p>
+                                </div>
+                            </div>
+                            <span
+                                class="flex-shrink-0 bg-emerald-500/10 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/20"
+                                aria-label="Plan gratuito disponible">Gratis</span>
+                        </div>
+
+                        <p class="text-sm text-slate-400 flex-1">
+                            El asistente de IA más popular del mundo. Ideal para redactar trabajos, explicarte conceptos
+                            difíciles,
+                            hacer esquemas de estudio y resolver ejercicios paso a paso.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">✍️
+                                Escritura</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">📝 Resumen</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">🎓
+                                Exámenes</span>
+                        </div>
+
+                        <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white
+                      font-semibold text-sm py-3 rounded-xl transition-all duration-300 border border-slate-700
+                      hover:border-brand-600 group" aria-label="Abrir ChatGPT en una nueva pestaña">
+                            Abrir herramienta
+                            <span class="inline-block transition-transform group-hover:translate-x-1"
+                                aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <!-- ===== AD SLOT 2 — ENTRE TARJETAS =====
+               Pega aquí tu código de Google AdSense
+          ======================================== -->
+                    <!-- ADSENSE: AD_SLOT_IN_FEED -->
+                    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86"></ins> -->
+
+
+                    <!-- ——— TARJETA 2: Claude 3.5 ——— -->
+                    <article class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col gap-4
+                          hover:border-brand-600/50 hover:shadow-xl hover:shadow-brand-900/30 hover:-translate-y-1
+                          transition-all duration-300 card-animate" data-category="escritura resumen" role="listitem"
+                        aria-label="Herramienta: Claude 3.5">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-2xl flex-shrink-0"
+                                    aria-hidden="true">🧠</div>
+                                <div>
+                                    <h3 class="font-bold text-white text-lg leading-tight">Claude 3.5</h3>
+                                    <p class="text-xs text-slate-500">Anthropic</p>
+                                </div>
+                            </div>
+                            <span
+                                class="flex-shrink-0 bg-amber-500/10 text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/20"
+                                aria-label="Plan freemium disponible">Freemium</span>
+                        </div>
+
+                        <p class="text-sm text-slate-400 flex-1">
+                            Sobresale analizando documentos largos y PDFs. Perfecto para TFGs, trabajos de investigación
+                            y
+                            razonar con argumentos complejos. Responde de forma más rigurosa y matizada.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">📄 PDFs</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">✍️ TFG/TFM</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">📚
+                                Análisis</span>
+                        </div>
+
+                        <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white
+                      font-semibold text-sm py-3 rounded-xl transition-all duration-300 border border-slate-700
+                      hover:border-brand-600 group" aria-label="Abrir Claude 3.5 en una nueva pestaña">
+                            Abrir herramienta
+                            <span class="inline-block transition-transform group-hover:translate-x-1"
+                                aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <!-- ——— TARJETA 3: Perplexity AI ——— -->
+                    <article class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col gap-4
+                          hover:border-brand-600/50 hover:shadow-xl hover:shadow-brand-900/30 hover:-translate-y-1
+                          transition-all duration-300 card-animate" data-category="busqueda" role="listitem"
+                        aria-label="Herramienta: Perplexity AI">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-2xl flex-shrink-0"
+                                    aria-hidden="true">🔍</div>
+                                <div>
+                                    <h3 class="font-bold text-white text-lg leading-tight">Perplexity AI</h3>
+                                    <p class="text-xs text-slate-500">Perplexity</p>
+                                </div>
+                            </div>
+                            <span
+                                class="flex-shrink-0 bg-emerald-500/10 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/20"
+                                aria-label="Plan gratuito disponible">Gratis</span>
+                        </div>
+
+                        <p class="text-sm text-slate-400 flex-1">
+                            El buscador potenciado por IA que cita fuentes reales y actualizadas. Imprescindible para
+                            investigaciones
+                            académicas donde necesitas referencias fiables para bibliografías.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">🔍
+                                Búsqueda</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">📎 Fuentes</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">🌐 Web</span>
+                        </div>
+
+                        <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white
+                      font-semibold text-sm py-3 rounded-xl transition-all duration-300 border border-slate-700
+                      hover:border-brand-600 group" aria-label="Abrir Perplexity AI en una nueva pestaña">
+                            Abrir herramienta
+                            <span class="inline-block transition-transform group-hover:translate-x-1"
+                                aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                </div><!-- /tools-grid -->
+
+                <!-- CTA — próximamente más herramientas -->
+                <div class="mt-12 text-center">
+                    <p class="text-slate-500 text-sm mb-4">Más herramientas llegando próximamente...</p>
+                    <a href="#" class="inline-flex items-center gap-2 border border-slate-700 hover:border-brand-600 text-slate-400 hover:text-brand-400
+                    text-sm font-medium px-6 py-3 rounded-xl transition-all"
+                        aria-label="Suscribirse para recibir novedades del directorio">
+                        🔔 Avisarme cuando añadáis más
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+         SECCIÓN FAQ (SEO Long-tail)
+    ============================================== -->
+        <section class="py-16 px-4 border-t border-slate-800/60" aria-labelledby="faq-title">
+            <div class="max-w-3xl mx-auto">
+                <h2 id="faq-title" class="text-2xl sm:text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+                <div class="space-y-4" role="list">
+
+                    <details class="bg-slate-900 border border-slate-800 rounded-2xl p-5 group" role="listitem">
+                        <summary
+                            class="font-semibold text-white cursor-pointer list-none flex justify-between items-center"
+                            aria-expanded="false">
+                            ¿Las herramientas del directorio son realmente gratis?
+                            <span class="text-brand-400 ml-2 transition-transform group-open:rotate-180"
+                                aria-hidden="true">▼</span>
+                        </summary>
+                        <p class="mt-3 text-sm text-slate-400">Sí. Todas las herramientas incluidas tienen un plan
+                            gratuito o freemium que permite usarlas sin pagar. Algunas ofrecen planes de pago con más
+                            capacidades, pero para la mayoría de tareas académicas el plan gratuito es más que
+                            suficiente.</p>
+                    </details>
+
+                    <details class="bg-slate-900 border border-slate-800 rounded-2xl p-5 group" role="listitem">
+                        <summary
+                            class="font-semibold text-white cursor-pointer list-none flex justify-between items-center"
+                            aria-expanded="false">
+                            ¿Usar IA para estudiar es trampa?
+                            <span class="text-brand-400 ml-2 transition-transform group-open:rotate-180"
+                                aria-hidden="true">▼</span>
+                        </summary>
+                        <p class="mt-3 text-sm text-slate-400">Depende del uso. Usar IA como tutor personal para
+                            entender conceptos, generar fichas de estudio o revisar tu redacción es perfectamente ético.
+                            Entregar contenido generado íntegramente por IA como propio sí puede ser considerado plagio
+                            por tu institución. Úsala como herramienta de aprendizaje, no como sustituto.</p>
+                    </details>
+
+                    <details class="bg-slate-900 border border-slate-800 rounded-2xl p-5 group" role="listitem">
+                        <summary
+                            class="font-semibold text-white cursor-pointer list-none flex justify-between items-center"
+                            aria-expanded="false">
+                            ¿Cuál es la mejor IA para hacer un TFG o trabajo académico?
+                            <span class="text-brand-400 ml-2 transition-transform group-open:rotate-180"
+                                aria-hidden="true">▼</span>
+                        </summary>
+                        <p class="mt-3 text-sm text-slate-400">Para trabajos extensos como TFGs recomendamos
+                            <strong>Claude 3.5</strong> por su capacidad de analizar documentos largos, y
+                            <strong>Perplexity AI</strong> para encontrar y citar fuentes académicas. ChatGPT también es
+                            muy útil para estructurar y redactar secciones concretas.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =============================================
+       FOOTER
+  ============================================== -->
+    <footer class="border-t border-slate-800 bg-slate-900/50 py-10 px-4" role="contentinfo">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2" aria-label="IA_Estudiantes - Inicio">
+                    <span class="text-xl" aria-hidden="true">🎓</span>
+                    <span class="font-bold text-slate-300">IA<span class="text-brand-400">_Estudiantes</span></span>
+                </a>
+
+                <!-- Legal links -->
+                <nav aria-label="Navegación legal">
+                    <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-slate-500">
+                        <li><a href="privacy-policy.html" class="hover:text-slate-300 transition-colors">Política de
+                                Privacidad</a></li>
+                        <li><a href="privacy-policy.html#cookies"
+                                class="hover:text-slate-300 transition-colors">Política de Cookies</a></li>
+                        <li><a href="privacy-policy.html#aviso-legal"
+                                class="hover:text-slate-300 transition-colors">Aviso Legal</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Copyright -->
+                <p class="text-xs text-slate-600 text-center">
+                    &copy; <span id="current-year"></span> IA_Estudiantes. Hecho con ❤️ para estudiantes.
+                </p>
+            </div>
+
+            <!-- Disclaimer -->
+            <p class="mt-6 text-xs text-slate-700 text-center max-w-2xl mx-auto">
+                IA_Estudiantes es un directorio informativo independiente. No somos responsables del contenido de las
+                herramientas externas enlazadas.
+                Este sitio puede mostrar publicidad de Google AdSense.
+            </p>
+        </div>
+    </footer>
+
+    <!-- =============================================
+       BANNER DE COOKIES
+  ============================================== -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 hidden" role="dialog" aria-modal="true"
+        aria-labelledby="cookie-title" aria-describedby="cookie-desc">
+        <div class="max-w-4xl mx-auto bg-slate-800 border border-slate-700 rounded-2xl p-5 sm:p-6 shadow-2xl
+                flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div class="flex-1">
+                <h2 id="cookie-title" class="font-bold text-white text-sm mb-1">🍪 Usamos cookies</h2>
+                <p id="cookie-desc" class="text-xs text-slate-400">
+                    Esta web utiliza cookies propias y de terceros (Google AdSense, Analytics) para mejorar la
+                    experiencia
+                    y mostrar publicidad personalizada. Consulta nuestra
+                    <a href="privacy-policy.html#cookies" class="text-brand-400 underline hover:text-brand-300">Política
+                        de Cookies</a>.
+                </p>
+            </div>
+            <div class="flex gap-3 flex-shrink-0">
+                <button id="cookie-decline"
+                    class="text-xs font-medium text-slate-400 hover:text-white px-4 py-2 rounded-lg border border-slate-600 hover:border-slate-500 transition-colors"
+                    aria-label="Rechazar cookies no esenciales">
+                    Solo esenciales
+                </button>
+                <button id="cookie-accept"
+                    class="text-xs font-bold bg-brand-600 hover:bg-brand-700 text-white px-5 py-2 rounded-lg transition-colors"
+                    aria-label="Aceptar todas las cookies">
+                    Aceptar todo ✓
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+
+</html>
