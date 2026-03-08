@@ -109,18 +109,26 @@
   function applyVisibility() {
     const searchVal = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
     let visible = 0;
+    const total  = toolCards.length;
 
     toolCards.forEach(function (card) {
       const categories = (card.dataset.category || '').split(' ');
       const matchesFilter = activeFilter === 'all' || categories.includes(activeFilter);
 
-      const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
-      const desc  = (card.querySelector('p')?.textContent  || '').toLowerCase();
-      const cats  = (card.dataset.category || '').toLowerCase();
+      // Buscar en título, descripción, categorías y texto de tags visibles
+      const title   = (card.querySelector('h3')?.textContent || '').toLowerCase();
+      const desc    = (card.querySelector('p')?.textContent  || '').toLowerCase();
+      const cats    = (card.dataset.category || '').toLowerCase();
+      const tagText = Array.from(card.querySelectorAll('.tag'))
+                        .map(function (t) { return t.textContent; })
+                        .join(' ')
+                        .toLowerCase();
+
       const matchesSearch = !searchVal ||
-        title.includes(searchVal) ||
-        desc.includes(searchVal)  ||
-        cats.includes(searchVal);
+        title.includes(searchVal)   ||
+        desc.includes(searchVal)    ||
+        cats.includes(searchVal)    ||
+        tagText.includes(searchVal);
 
       const show = matchesFilter && matchesSearch;
       card.classList.toggle('hidden-by-filter', !show);
@@ -128,6 +136,11 @@
     });
 
     if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+
+    // Actualizar contador
+    if (typeof window._updateSearchCount === 'function') {
+      window._updateSearchCount(visible, total, searchVal.length > 0);
+    }
   }
 
   filterBtns.forEach(function (btn) {
@@ -156,25 +169,58 @@
    5. BUSCADOR EN TIEMPO REAL
    ---------------------------------------------------------- */
 (function initSearch() {
-  const input = document.getElementById('search-input');
+  const input      = document.getElementById('search-input');
+  const clearBtn   = document.getElementById('search-clear');
+  const countEl    = document.getElementById('search-results-count');
   if (!input) return;
 
+  function updateClearBtn() {
+    if (!clearBtn) return;
+    clearBtn.classList.toggle('visible', input.value.length > 0);
+  }
+
   input.addEventListener('input', function () {
+    updateClearBtn();
     if (typeof window._applyCardVisibility === 'function') {
       window._applyCardVisibility();
     }
   });
 
+  // Limpiar con botón ×
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function () {
+      input.value = '';
+      updateClearBtn();
+      if (typeof window._applyCardVisibility === 'function') {
+        window._applyCardVisibility();
+      }
+      input.focus();
+    });
+  }
+
   // Limpiar con Escape
   input.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       input.value = '';
+      updateClearBtn();
       if (typeof window._applyCardVisibility === 'function') {
         window._applyCardVisibility();
       }
       input.blur();
     }
   });
+
+  // Exponer actualización del contador para que la use el filtro
+  window._updateSearchCount = function (visible, total, hasSearch) {
+    if (!countEl) return;
+    if (hasSearch) {
+      countEl.textContent = visible === total
+        ? 'Mostrando ' + total + ' herramienta' + (total !== 1 ? 's' : '')
+        : 'Mostrando ' + visible + ' de ' + total + ' herramienta' + (total !== 1 ? 's' : '');
+    } else {
+      countEl.textContent = '';
+    }
+  };
 })();
 
 
