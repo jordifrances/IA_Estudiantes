@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¡Suscripción confirmada! | IA_Estudiantes</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{400:'#60a5fa',500:'#3b82f6',600:'#2563eb'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col items-center justify-center px-4 text-center">
+
+    <div class="max-w-md">
+        <div class="text-6xl mb-6">🎉</div>
+        <h1 class="text-3xl font-extrabold text-white mb-4">¡Ya estás suscrito!</h1>
+        <p class="text-slate-400 mb-8">
+            Gracias por unirte al directorio de IA_Estudiantes. Te avisaremos cada vez que añadamos nuevas herramientas o guías.
+        </p>
+        <a href="index.html"
+            class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-brand-600/30">
+            ← Volver al directorio
+        </a>
+    </div>
+
+    <script>
+        // Año en footer si lo añadimos
+        document.querySelectorAll('#current-year').forEach(el => el.textContent = new Date().getFullYear());
+    </script>
+</body>
+</html>

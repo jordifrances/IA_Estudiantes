@@ -1,110 +1,377 @@
 /* ============================================================
    styles.css — IA_Estudiantes
-   Complemento a Tailwind CDN: animaciones y ajustes finos
+   Complemento a Tailwind CDN: animaciones, temas y ajustes finos
    ============================================================ */
 
-/* ---------- Fuente base ---------- */
+/* ---------- Box model ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-/* ---------- Animaciones de entrada ---------- */
+/* ============================================================
+   TEMA: Variables CSS (Modo Oscuro por defecto)
+   ============================================================ */
+:root {
+  --bg-page:        #020617;  /* slate-950 */
+  --bg-card:        #0f172a;  /* slate-900 */
+  --bg-header:      rgba(2, 6, 23, 0.9);
+  --bg-el:          #1e293b;  /* slate-800 */
+  --bg-el-hover:    #334155;  /* slate-700 */
+  --border-color:   #1e293b;  /* slate-800 */
+  --text-primary:   #f1f5f9;  /* slate-100 */
+  --text-secondary: #94a3b8;  /* slate-400 */
+  --text-muted:     #64748b;  /* slate-500 */
+  --text-subtle:    #334155;  /* slate-700 */
+  --brand-600:      #2563eb;
+  --brand-400:      #60a5fa;
+  --scrollbar-bg:   #0f172a;
+  --scrollbar-thumb:#334155;
+}
+
+html[data-theme="light"] {
+  --bg-page:        #f8fafc;  /* slate-50 */
+  --bg-card:        #ffffff;
+  --bg-header:      rgba(248, 250, 252, 0.92);
+  --bg-el:          #f1f5f9;  /* slate-100 */
+  --bg-el-hover:    #e2e8f0;  /* slate-200 */
+  --border-color:   #e2e8f0;  /* slate-200 */
+  --text-primary:   #0f172a;  /* slate-900 */
+  --text-secondary: #475569;  /* slate-600 */
+  --text-muted:     #64748b;  /* slate-500 */
+  --text-subtle:    #cbd5e1;  /* slate-300 */
+  --scrollbar-bg:   #f1f5f9;
+  --scrollbar-thumb:#cbd5e1;
+}
+
+/* Aplicar variables al DOM */
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html[data-theme="light"] header {
+  background-color: var(--bg-header) !important;
+  border-color: var(--border-color) !important;
+}
+
+html[data-theme="light"] #mobile-menu {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+html[data-theme="light"] footer {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+html[data-theme="light"] .tool-card,
+html[data-theme="light"] details,
+html[data-theme="light"] #search-bar,
+html[data-theme="light"] .filter-btn:not(.active) {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="light"] .tool-card .tag,
+html[data-theme="light"] .filter-btn:not(.active) {
+  background-color: var(--bg-el) !important;
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="light"] .tool-card a.block {
+  background-color: var(--bg-el) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="light"] .text-slate-400 { color: var(--text-secondary) !important; }
+html[data-theme="light"] .text-slate-500 { color: var(--text-muted) !important; }
+html[data-theme="light"] .text-slate-300 { color: var(--text-secondary) !important; }
+html[data-theme="light"] .text-white     { color: var(--text-primary) !important; }
+html[data-theme="light"] .border-slate-800 { border-color: var(--border-color) !important; }
+html[data-theme="light"] .bg-slate-900   { background-color: var(--bg-card) !important; }
+html[data-theme="light"] .bg-slate-950   { background-color: var(--bg-page) !important; }
+html[data-theme="light"] .bg-slate-800   { background-color: var(--bg-el) !important; }
+html[data-theme="light"] .hover\:bg-slate-700:hover { background-color: var(--bg-el-hover) !important; }
+html[data-theme="light"] .text-slate-600 { color: var(--text-muted) !important; }
+html[data-theme="light"] .text-slate-700 { color: var(--text-subtle) !important; }
+html[data-theme="light"] section.border-t { border-color: var(--border-color) !important; }
+
+/* ============================================================
+   ANIMACIONES DE ENTRADA
+   ============================================================ */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
-@keyframes slideUpBanner {
-  from { transform: translateY(100%); opacity: 0; }
-  to   { transform: translateY(0);   opacity: 1; }
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
-/* Clases de utilidad de animación */
-.animate-fade-in {
-  animation: fadeIn 0.5s ease both;
-}
+.animate-fade-in  { animation: fadeIn  0.5s ease both; }
+.animate-slide-up { animation: slideUp 0.6s ease both; }
 
-.animate-slide-up {
-  animation: slideUp 0.6s ease both;
-}
-
-/* ---------- Tarjetas de herramientas (card-animate) ---------- */
+/* ---------- IntersectionObserver: tarjetas ocultas por defecto ---------- */
 .card-animate {
-  animation: slideUp 0.5s ease both;
-  animation-fill-mode: both;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-/* Stagger delay para las tarjetas */
-.card-animate:nth-child(1) { animation-delay: 0.05s; }
-.card-animate:nth-child(2) { animation-delay: 0.15s; }
-.card-animate:nth-child(3) { animation-delay: 0.25s; }
-
-/* ---------- Banner de cookies ---------- */
-#cookie-banner.visible {
-  animation: slideUpBanner 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+.card-animate.card-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ---------- Filtros del directorio ---------- */
+/* ============================================================
+   FILTROS
+   ============================================================ */
+.filter-btn {
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              color            0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform        0.15s ease,
+              box-shadow       0.2s ease;
+}
+
+.filter-btn:hover  { transform: translateY(-1px); }
+.filter-btn:active { transform: translateY(0);    }
+
 .filter-btn.active {
-  background-color: #2563eb; /* brand-600 */
+  background-color: var(--brand-600);
   color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
 }
 
 .filter-btn:focus-visible {
-  outline: 2px solid #60a5fa;
+  outline: 2px solid var(--brand-400);
   outline-offset: 2px;
 }
 
-/* ---------- Tarjetas (tool-card) ocultas por filtro ---------- */
-.tool-card.hidden-by-filter {
-  display: none;
+/* ============================================================
+   BURSOR DE BÚSQUEDA
+   ============================================================ */
+#search-bar {
+  background-color: var(--bg-el);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 480px;
+  padding: 0.625rem 1rem 0.625rem 2.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  outline: none;
 }
 
-/* ---------- Focus-visible global (accesibilidad) ---------- */
+#search-bar::placeholder { color: var(--text-muted); }
+
+#search-bar:focus {
+  border-color: var(--brand-400);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.search-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.875rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+/* Mensaje sin resultados */
+#no-results {
+  display: none;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   TOOLTIPS en etiquetas .tag
+   ============================================================ */
+.tag {
+  position: relative;
+  cursor: default;
+}
+
+.tag[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 50;
+  border: 1px solid #334155;
+}
+
+.tag[data-tooltip]::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #334155;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.tag[data-tooltip]:hover::after,
+.tag[data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+html[data-theme="light"] .tag[data-tooltip]::after {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+/* ============================================================
+   BADGE 🔥 MÁS POPULAR
+   ============================================================ */
+.badge-popular {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Las tarjetas populares necesitan position relative para el badge */
+.tool-card { position: relative; }
+
+/* ============================================================
+   TARJETAS
+   ============================================================ */
+.tool-card.hidden-by-filter { display: none; }
+
+/* ============================================================
+   BOTÓN VOLVER ARRIBA
+   ============================================================ */
+#back-to-top {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 40;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-600);
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+  pointer-events: none;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#back-to-top:hover { background-color: #1d4ed8; }
+
+/* ============================================================
+   TOGGLE TEMA (☀️/🌙)
+   ============================================================ */
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+#theme-toggle:hover { background-color: var(--bg-el); }
+
+/* ============================================================
+   FOCUS-VISIBLE GLOBAL (accesibilidad)
+   ============================================================ */
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #60a5fa;
+  outline: 2px solid var(--brand-400);
   outline-offset: 2px;
   border-radius: 6px;
 }
 
-/* ---------- Transición suave para el <details> / FAQ ---------- */
-details > p {
-  animation: slideUp 0.25s ease both;
-}
+/* ============================================================
+   FAQ (details/summary)
+   ============================================================ */
+details > p { animation: slideUp 0.25s ease both; }
+details[open] > summary .rotate-180 { transform: rotate(180deg); }
 
-details[open] > summary .rotate-180 {
-  transform: rotate(180deg);
-}
-
-/* ---------- Tabla de cookies (privacy-policy) ---------- */
+/* ============================================================
+   TABLA (privacy-policy)
+   ============================================================ */
 .prose-content td,
-.prose-content th {
-  vertical-align: top;
-}
+.prose-content th { vertical-align: top; }
 
-/* ---------- Scrollbar personalizado ---------- */
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
 :root {
   scrollbar-width: thin;
-  scrollbar-color: #334155 #0f172a;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track  { background: #0f172a; }
-::-webkit-scrollbar-thumb  { background: #334155; border-radius: 999px; }
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-bg); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 999px; }
 ::-webkit-scrollbar-thumb:hover { background: #475569; }
 
-/* ---------- Reduce motion (accesibilidad) ---------- */
+/* ============================================================
+   REDUCE MOTION (accesibilidad)
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

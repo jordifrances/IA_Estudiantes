@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cómo usar IA para tu TFG | IA_Estudiantes</title>
+    <meta name="description" content="Guía completa para usar herramientas de Inteligencia Artificial en tu Trabajo de Fin de Grado o Máster: búsqueda de fuentes, estructura, redacción y revisión." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://jordifrances.github.io/IA_Estudiantes/guia-tfg.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8660706981482267" crossorigin="anonymous"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800" role="banner">
+        <nav class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2" aria-label="Volver al inicio de IA_Estudiantes">
+                <span class="text-xl" aria-hidden="true">🎓</span>
+                <span class="text-xl font-bold"><span class="text-white">IA</span><span class="text-brand-500">_Estudiantes</span></span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="index.html#directorio" class="text-sm text-slate-400 hover:text-white transition-colors">← Volver al directorio</a>
+                <button id="theme-toggle" aria-label="Cambiar a modo claro">☀️</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-16">
+
+        <!-- Breadcrumb -->
+        <nav class="text-xs text-slate-500 mb-8" aria-label="Ruta de navegación">
+            <ol class="flex items-center gap-2">
+                <li><a href="index.html" class="hover:text-brand-400 transition-colors">Inicio</a></li>
+                <li aria-hidden="true">›</li>
+                <li class="text-slate-400">Guías de Estudio</li>
+                <li aria-hidden="true">›</li>
+                <li class="text-slate-300">TFG con IA</li>
+            </ol>
+        </nav>
+
+        <!-- Header -->
+        <div class="mb-12">
+            <span class="inline-flex items-center gap-2 bg-brand-900/60 border border-brand-700/50 text-brand-300 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+                Guía práctica · 5 min de lectura
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                Cómo usar IA para tu TFG o Trabajo Final
+            </h1>
+            <p class="text-slate-400 text-lg">
+                Desde la búsqueda de fuentes hasta la revisión final: las herramientas que todo estudiante debería conocer antes de empezar su trabajo de fin de grado.
+            </p>
+        </div>
+
+        <!-- Contenido -->
+        <div class="space-y-10 text-slate-300 leading-relaxed">
+
+            <section>
+                <h2 class="text-xl font-bold text-white mb-4">🔍 1. Búsqueda y exploración de fuentes académicas</h2>
+                <p>El primer obstáculo de cualquier TFG es encontrar bibliografía de calidad. Las IAs tradicionales pueden alucinar referencias, pero existen herramientas especializadas que solo trabajan con fuentes reales:</p>
+                <ul class="mt-4 space-y-3">
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">Perplexity AI</strong>: Busca y cita artículos reales con URL verificables. Úsalo para explorar el estado del arte de tu tema antes de profundizar.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">Elicit.com</strong>: Especializado en papers científicos. Introduce tu pregunta de investigación y te devuelve los estudios más relevantes con un resumen de cada uno.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">Consensus.app</strong>: Muestra el consenso científico sobre cualquier pregunta. Perfecto para respaldar tus argumentos con evidencia académica sólida.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-white mb-4">📄 2. Analizar documentos y papers largos</h2>
+                <p>Una vez que localizas las fuentes relevantes, tienes que leerlas. Aquí es donde la IA ahorra horas de trabajo:</p>
+                <ul class="mt-4 space-y-3">
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">ChatPDF</strong>: Sube cualquier PDF y hazle preguntas directas. "¿Cuál es la metodología?" o "¿Qué conclusiones saca el autor sobre X?" en segundos.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">Claude 3.5</strong>: Puedes pasarle textos muy largos (hasta 200.000 palabras). Ideal para que te resuma un capítulo completo o compare varios artículos a la vez.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-white mb-4">✍️ 3. Estructurar y redactar con rigor académico</h2>
+                <p>Una vez tienes las ideas claras, la IA puede ayudarte a articularlo con el tono y estructura correctos:</p>
+                <ul class="mt-4 space-y-3">
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">ChatGPT</strong>: Pídele que estructure un capítulo, redacte un párrafo de introducción o reformule una frase para que suene más académica. El truco: sé muy específico en el prompt.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">Claude 3.5</strong>: Para argumentaciones complejas y textos que requieren coherencia interna en varios párrafos, Claude suele ofrecer respuestas más matizadas y rigurosas.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">Grammarly</strong>: Si escribes partes en inglés, Grammarly es obligatorio para pulir la gramática y adaptar el tono académico.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-white mb-4">📊 4. Presentación y defensa</h2>
+                <p>La presentación es la última impresión que dejas. Con IA puedes crearla en minutos:</p>
+                <ul class="mt-4 space-y-3">
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">Gamma App</strong>: Escribe el resumen de tu TFG y Gamma genera diapositivas con diseño profesional. Puedes editarlas y adaptarlas a tu estilo en minutos.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-brand-400 font-bold flex-shrink-0">→</span>
+                        <span><strong class="text-white">Canva AI</strong>: Para pósters científicos o infografías que acompañen la defensa, Canva tiene plantillas académicas excelentes.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="bg-brand-900/30 border border-brand-700/40 rounded-2xl p-6">
+                <h3 class="font-bold text-brand-300 mb-2">⚠️ Recuerda: usa la IA de forma ética</h3>
+                <p class="text-sm text-slate-400">Usar IA para buscar fuentes, comprender conceptos y mejorar tu redacción es perfectamente válido. Sin embargo, presentar como propio texto íntegramente generado por IA puede considerarse plagio académico. Usa estas herramientas como un apoyo, no como un sustituto de tu trabajo intelectual.</p>
+            </div>
+        </div>
+
+        <!-- Guías relacionadas -->
+        <div class="mt-16 pt-8 border-t border-slate-800">
+            <h2 class="text-xl font-bold text-white mb-6">Otras guías que te pueden interesar</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <a href="guia-examenes.html" class="group bg-slate-900 border border-slate-800 hover:border-brand-600/50 rounded-xl p-5 transition-all hover:-translate-y-0.5 flex gap-4 items-start">
+                    <span class="text-2xl">🎯</span>
+                    <div>
+                        <h3 class="font-semibold text-white group-hover:text-brand-400 transition-colors">Prepara tus exámenes con IA en 5 pasos</h3>
+                        <p class="text-xs text-slate-500 mt-1">Flashcards, tests y tutor virtual</p>
+                    </div>
+                </a>
+                <a href="guia-idiomas.html" class="group bg-slate-900 border border-slate-800 hover:border-brand-600/50 rounded-xl p-5 transition-all hover:-translate-y-0.5 flex gap-4 items-start">
+                    <span class="text-2xl">🌍</span>
+                    <div>
+                        <h3 class="font-semibold text-white group-hover:text-brand-400 transition-colors">IA para idiomas y traducciones</h3>
+                        <p class="text-xs text-slate-500 mt-1">DeepL, Grammarly y más</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-slate-900/50 py-8 px-4 mt-8" role="contentinfo">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="flex items-center gap-2">
+                <span aria-hidden="true">🎓</span>
+                <span class="font-bold text-slate-300">IA<span class="text-brand-400">_Estudiantes</span></span>
+            </a>
+            <p class="text-xs text-slate-600">© <span id="current-year"></span> IA_Estudiantes. Hecho con ❤️ para estudiantes.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Volver al inicio">↑</button>
+    <script src="main.js"></script>
+</body>
+</html>

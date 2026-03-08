@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 
 <head>
     <!-- =============================================
@@ -54,9 +54,11 @@
     <link rel="stylesheet" href="styles.css" />
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8660706981482267" crossorigin="anonymous"></script>
-    <!-- Google Fonts -->
+    <!-- Google Fonts + LCP preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
 
@@ -308,6 +310,9 @@
                         Ver herramientas
                     </a>
                 </li>
+                <li>
+                    <button id="theme-toggle" aria-label="Cambiar a modo claro">☀️</button>
+                </li>
             </ul>
 
             <!-- Mobile menu button -->
@@ -471,6 +476,20 @@
                         plan gratuito para empezar.</p>
                 </div>
 
+                <!-- Buscador en tiempo real -->
+                <div class="flex justify-center mb-6">
+                    <div class="search-wrapper">
+                        <span class="search-icon" aria-hidden="true">🔍</span>
+                        <input
+                            id="search-input"
+                            type="search"
+                            placeholder="Busca una herramienta... (ej. &quot;traductor&quot;, &quot;PDF&quot;)"
+                            autocomplete="off"
+                            aria-label="Buscar herramientas de IA"
+                        />
+                    </div>
+                </div>
+
                 <!-- Filter pills -->
                 <div class="flex flex-wrap gap-2 justify-center mb-10" role="group" aria-label="Filtrar por categoría">
                     <button
@@ -512,6 +531,7 @@
                           hover:border-brand-600/50 hover:shadow-xl hover:shadow-brand-900/30 hover:-translate-y-1
                           transition-all duration-300 card-animate" data-category="escritura resumen" role="listitem"
                         aria-label="Herramienta: ChatGPT">
+                        <span class="badge-popular">🔥 Más popular</span>
                         <div class="flex items-start justify-between gap-3">
                             <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-2xl flex-shrink-0"
@@ -533,11 +553,9 @@
                         </p>
 
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">✍️
-                                Escritura</span>
-                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">📝 Resumen</span>
-                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">🎓
-                                Exámenes</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md" data-tooltip="Ideal para redactar trabajos y ensayos">✍️ Escritura</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md" data-tooltip="Resume apuntes y textos largos">📝 Resumen</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md" data-tooltip="Genera preguntas de práctica">🎓 Exámenes</span>
                         </div>
 
                         <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white
@@ -561,6 +579,7 @@
                           hover:border-brand-600/50 hover:shadow-xl hover:shadow-brand-900/30 hover:-translate-y-1
                           transition-all duration-300 card-animate" data-category="escritura resumen" role="listitem"
                         aria-label="Herramienta: Claude 3.5">
+                        <span class="badge-popular">🔥 Popular</span>
                         <div class="flex items-start justify-between gap-3">
                             <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-2xl flex-shrink-0"
@@ -582,10 +601,9 @@
                         </p>
 
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">📄 PDFs</span>
-                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">✍️ TFG/TFM</span>
-                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md">📚
-                                Análisis</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md" data-tooltip="Analiza y resume documentos PDF">📄 PDFs</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md" data-tooltip="Redacción rigurosa de TFG y TFM">✍️ TFG/TFM</span>
+                            <span class="tag bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded-md" data-tooltip="Análisis profundo de textos">📚 Análisis</span>
                         </div>
 
                         <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white
@@ -602,6 +620,7 @@
                           hover:border-brand-600/50 hover:shadow-xl hover:shadow-brand-900/30 hover:-translate-y-1
                           transition-all duration-300 card-animate" data-category="busqueda" role="listitem"
                         aria-label="Herramienta: Perplexity AI">
+                        <span class="badge-popular">🔥 Popular</span>
                         <div class="flex items-start justify-between gap-3">
                             <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-2xl flex-shrink-0"
@@ -1122,21 +1141,104 @@
 
                 </div><!-- /tools-grid -->
 
-                <!-- CTA actualizado -->
+                <!-- Newsletter -->
                 <div class="mt-12 text-center">
-                    <p class="text-slate-500 text-sm mb-4">¿Conoces una herramienta que debería estar aquí? ¡El directorio se actualiza cada semana!</p>
-                    <a href="#" class="inline-flex items-center gap-2 border border-slate-700 hover:border-brand-600 text-slate-400 hover:text-brand-400
-                    text-sm font-medium px-6 py-3 rounded-xl transition-all"
-                        aria-label="Suscribirse para recibir novedades del directorio">
-                        🔔 Avisarme cuando añadáis más
+                    <p class="text-slate-400 text-sm mb-6">¿Conoces una herramienta que debería estar aquí?<br>
+                        <span class="text-slate-500">Súscríbete y te avisamos cada vez que añadamos nuevas.</span>
+                    </p>
+                    <form
+                        name="newsletter"
+                        method="POST"
+                        data-netlify="true"
+                        netlify-honeypot="bot-field"
+                        action="/gracias.html"
+                        class="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-md mx-auto"
+                        aria-label="Formulario de suscripción al newsletter"
+                    >
+                        <input type="hidden" name="form-name" value="newsletter" />
+                        <p class="hidden"><label>No rellenar: <input name="bot-field" /></label></p>
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="tu@email.com"
+                            class="flex-1 w-full sm:w-auto bg-slate-800 border border-slate-700 text-slate-200 placeholder-slate-500
+                                   rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 transition-all"
+                            aria-label="Tu dirección de correo electrónico"
+                        />
+                        <button
+                            type="submit"
+                            class="flex-shrink-0 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-6 py-3
+                                   rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-brand-600/30"
+                        >
+                            🔔 Suscribirme
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECCIÓN GUÍAS DE ESTUDIO
+        =============================================== -->
+        <section class="py-16 px-4 border-t border-slate-800/60" aria-labelledby="guias-title">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 id="guias-title" class="text-2xl sm:text-3xl font-bold mb-3">
+                        📚 Guías de Estudio con IA
+                    </h2>
+                    <p class="text-slate-400 max-w-xl mx-auto">Aprende a sacarle el máximo partido a la IA en situaciones reales del mundo académico.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-6">
+                    <a href="guia-tfg.html" class="group bg-slate-900 border border-slate-800 rounded-2xl p-6
+                        hover:border-brand-600/50 hover:shadow-xl hover:shadow-brand-900/30 hover:-translate-y-1
+                        transition-all duration-300 flex flex-col gap-3"
+                        aria-label="Leer guía: Cómo usar IA para tu TFG">
+                        <div class="text-3xl" aria-hidden="true">🎓</div>
+                        <h3 class="font-bold text-white text-base leading-tight group-hover:text-brand-400 transition-colors">
+                            Cómo usar IA para tu TFG o Trabajo Final
+                        </h3>
+                        <p class="text-sm text-slate-400">
+                            Desde la búsqueda de fuentes hasta la revisión final: las herramientas de IA que te salvarán el TFG.
+                        </p>
+                        <span class="text-brand-400 text-sm font-medium mt-auto group-hover:underline">Leer guía →</span>
+                    </a>
+
+                    <a href="guia-examenes.html" class="group bg-slate-900 border border-slate-800 rounded-2xl p-6
+                        hover:border-brand-600/50 hover:shadow-xl hover:shadow-brand-900/30 hover:-translate-y-1
+                        transition-all duration-300 flex flex-col gap-3"
+                        aria-label="Leer guía: Prepara exámenes con IA">
+                        <div class="text-3xl" aria-hidden="true">🎯</div>
+                        <h3 class="font-bold text-white text-base leading-tight group-hover:text-brand-400 transition-colors">
+                            Prepara tus exámenes con IA en 5 pasos
+                        </h3>
+                        <p class="text-sm text-slate-400">
+                            Flashcards, tests de práctica y tutor virtual: el método definitivo para aprobar con menos tiempo.
+                        </p>
+                        <span class="text-brand-400 text-sm font-medium mt-auto group-hover:underline">Leer guía →</span>
+                    </a>
+
+                    <a href="guia-idiomas.html" class="group bg-slate-900 border border-slate-800 rounded-2xl p-6
+                        hover:border-brand-600/50 hover:shadow-xl hover:shadow-brand-900/30 hover:-translate-y-1
+                        transition-all duration-300 flex flex-col gap-3"
+                        aria-label="Leer guía: IA para idiomas y traducciones">
+                        <div class="text-3xl" aria-hidden="true">🌍</div>
+                        <h3 class="font-bold text-white text-base leading-tight group-hover:text-brand-400 transition-colors">
+                            IA para idiomas y traducciones académicas
+                        </h3>
+                        <p class="text-sm text-slate-400">
+                            DeepL, Grammarly y ChatGPT para trabajos en inglés, francés o cualquier otro idioma.
+                        </p>
+                        <span class="text-brand-400 text-sm font-medium mt-auto group-hover:underline">Leer guía →</span>
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- =============================================
-         SECCIÓN FAQ (SEO Long-tail)
-    ============================================== -->
+             SECCIÓN FAQ (SEO Long-tail)
+        =============================================== -->
         <section class="py-16 px-4 border-t border-slate-800/60" aria-labelledby="faq-title">
             <div class="max-w-3xl mx-auto">
                 <h2 id="faq-title" class="text-2xl sm:text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
@@ -1228,6 +1330,9 @@
             </p>
         </div>
     </footer>
+
+    <!-- Botón Volver Arriba -->
+    <button id="back-to-top" aria-label="Volver al inicio de la página">↑</button>
 
     <!-- Scripts -->
     <script src="main.js"></script>
